@@ -38,19 +38,299 @@
             const textParts = data.text.split("\n");
 
             // Access specific parts of the text by index
-            const CodiceFiscale = textParts[6];
+
+            //PAGE 1
             const CodicePOD = textParts[13];
             const periodo = textParts[27];
+            const LaFornitureDiEnergiaElettricaEIn =
+              textParts[23] + textParts[24] + textParts[25];
+            const ViaValcesano5961037MondolfoPU = textParts[26];
+            const TipologiaClienteAltriUsi = textParts[27];
+            const PeriodoNOV2023SpesaPerLENERGIAELETTRICA =
+              textParts[31] + textParts[32] + textParts[33] + textParts[34];
+            const BollettaSinteticaRiferitaAllaFatturaElettronica =
+              textParts[35] +
+              textParts[36] +
+              textParts[37] +
+              textParts[38] +
+              textParts[39];
+
+            //PAGE 2
+
+            const SoluzioneEnergiaImpresaSuperMono =
+              textParts[136] + textParts[137];
+            const CodiceOfferta = textParts[138] + textParts[139];
+            const DataAttivazioneOfferta = textParts[140] + textParts[141];
+            const ScadenzaOfferta = textParts[142] + textParts[143];
+            const ScadenzaContratto = textParts[144] + textParts[145];
+            const TensioneDiFornitura =
+              textParts[149] + textParts[150] + textParts[151];
+            const PotenzaDisponsibile = textParts[152] + textParts[154];
+            const DistributoreDiRiferimento = textParts[154] + textParts[155];
+
+            const RiepilogoLettureEnergiaAttivaPrelevata = textParts[277] + ":";
+            const row1 =
+              textParts[293] +
+              " " +
+              textParts[294] +
+              " " +
+              textParts[295] +
+              " " +
+              textParts[296] +
+              " " +
+              textParts[297];
+            const row2 =
+              textParts[298] +
+              " " +
+              textParts[299] +
+              " " +
+              textParts[300] +
+              " " +
+              textParts[301] +
+              " " +
+              textParts[302];
+            const row3 =
+              textParts[303] +
+              " " +
+              textParts[304] +
+              " " +
+              textParts[305] +
+              " " +
+              textParts[306] +
+              " " +
+              textParts[307];
+            const row4 =
+              textParts[308] +
+              " " +
+              textParts[309] +
+              " " +
+              textParts[310] +
+              " " +
+              textParts[311] +
+              " " +
+              textParts[312];
+            const row5 =
+              textParts[313] +
+              " " +
+              textParts[314] +
+              " " +
+              textParts[315] +
+              " " +
+              textParts[316] +
+              " " +
+              textParts[317];
+            const row6 =
+              textParts[318] +
+              " " +
+              textParts[319] +
+              " " +
+              textParts[320] +
+              " " +
+              textParts[321] +
+              " " +
+              textParts[322];
+            const row7 =
+              textParts[323] +
+              " " +
+              textParts[324] +
+              " " +
+              textParts[325] +
+              " " +
+              textParts[326] +
+              " " +
+              textParts[327];
+            const row8 =
+              textParts[328] +
+              " " +
+              textParts[329] +
+              " " +
+              textParts[330] +
+              " " +
+              textParts[331] +
+              " " +
+              textParts[332];
+            const row9 =
+              textParts[340] +
+              " " +
+              textParts[341] +
+              " " +
+              textParts[342] +
+              " " +
+              textParts[343] +
+              " " +
+              textParts[344];
+            const row10 =
+              textParts[345] +
+              " " +
+              textParts[346] +
+              " " +
+              textParts[347] +
+              " " +
+              textParts[348] +
+              " " +
+              textParts[349];
+            const row11 =
+              textParts[350] +
+              " " +
+              textParts[351] +
+              " " +
+              textParts[352] +
+              " " +
+              textParts[353] +
+              " " +
+              textParts[354];
+            const row12 =
+              textParts[355] +
+              " " +
+              textParts[356] +
+              " " +
+              textParts[357] +
+              " " +
+              textParts[358] +
+              " " +
+              textParts[359];
+            const row13 =
+              textParts[360] +
+              " " +
+              textParts[361] +
+              " " +
+              textParts[362] +
+              " " +
+              textParts[363] +
+              " " +
+              textParts[364];
+            const row14 =
+              textParts[365] +
+              " " +
+              textParts[366] +
+              " " +
+              textParts[367] +
+              " " +
+              textParts[368] +
+              " " +
+              textParts[369];
+            const row15 =
+              textParts[370] +
+              " " +
+              textParts[371] +
+              " " +
+              textParts[372] +
+              " " +
+              textParts[373] +
+              " " +
+              textParts[374];
+            const row16 =
+              textParts[375] +
+              " " +
+              textParts[376] +
+              " " +
+              textParts[377] +
+              " " +
+              textParts[378] +
+              " " +
+              textParts[379];
+
+            //PAGE 5
+
+            const EnergiaMono = textParts[1378];
+            const EnergiaMese = textParts[1379];
+            const EnergiaMesePrezzeUnitario = textParts[1391];
+            const ScontoPagoPuntualeLuce = textParts[1387];
+            const ScontoPagoPuntualeLucePrezzoUnitario = textParts[1391];
+
+            const QuotaFissa = textParts[1412];
+            const CommercializzazioneVendita =
+              textParts[1412] +
+              " " +
+              textParts[1413] +
+              " " +
+              textParts[1414] +
+              " " +
+              textParts[1415] +
+              "/" +
+              textParts[1416] +
+              " " +
+              textParts[1417] +
+              " " +
+              textParts[1417] +
+              " " +
+              textParts[1418] +
+              " " +
+              textParts[1419];
+            const ScontoBollettaDigitale =
+              textParts[1420] +
+              " " +
+              textParts[1421] +
+              " " +
+              textParts[1422] +
+              "/" +
+              textParts[1423] +
+              " " +
+              textParts[1424] +
+              " " +
+              textParts[1425] +
+              " " +
+              textParts[1426];
+            const ScontoFedeltaLuce =
+              textParts[1427] +
+              textParts[1428] +
+              textParts[1429] +
+              " " +
+              textParts[1430] +
+              " " +
+              textParts[1431] +
+              "/" +
+              textParts[1432] +
+              " " +
+              textParts[1433] +
+              " " +
+              textParts[1433] +
+              " " +
+              textParts[1434] +
+              " " +
+              textParts[1435];
+
+            const QuotaPotenza =
+              textParts[1492] +
+              " " +
+              textParts[1493] +
+              " " +
+              textParts[1494] +
+              " " +
+              textParts[1495] +
+              "/" +
+              textParts[1496] +
+              "/" +
+              textParts[1497] +
+              " " +
+              textParts[1498] +
+              " " +
+              textParts[1499] +
+              "/" +
+              textParts[1450] +
+              " " +
+              textParts[1451];
 
             // Set the textarea value to a specific part of the text
-            textarea.value = `Codice Fiscale: ${CodiceFiscale}\nCodice POD: ${CodicePOD}\nPeriodo: ${periodo}`;
-            // textarea.value = data.text;
+            // textarea.value = `Codice POD: ${CodicePOD}\nPeriodo: ${periodo}`;
+            textarea.value = data.text;
             // textarea.value = textParts[0];
+
+            // Search for the specific word
+            // const searchTerm = "51,345542";
+            // const wordIndex = textParts.findIndex((text) =>
+            //   text.includes(searchTerm)
+            // );
+            // if (wordIndex !== -1) {
+            //   console.log(`The index of '${searchTerm}' is: ${wordIndex}`);
+            // } else {
+            //   console.log(`'${searchTerm}' not found in the text.`);
+            // }
           })
           // .then((extractedText) => {
           //   textarea.value = extractedText.text;
           //   // textarea.value = extractedText;
-          // });
+          // })
           .catch((error) => {
             console.error("Fetch error:", error);
           });
