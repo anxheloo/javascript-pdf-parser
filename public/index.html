@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" id="inputFile" />
+    <button type="button" id="uploadButton">Upload</button>
+    <br />
+    <br />
+
+    <textarea
+      id="textarea"
+      placeholder="Your PDF text will appear here..."
+      style="width: 300px; height: 150px"
+    ></textarea>
+
+    <script>
+      const inputFile = document.getElementById("inputFile");
+      const uploadButton = document.getElementById("uploadButton");
+      const textarea = document.getElementById("textarea");
+
+      uploadButton.addEventListener("click", () => {
+        const formData = new FormData();
+        formData.append("pdfFile", inputFile.files[0]);
+
+        fetch("http://localhost:3000/extract-text", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            // return response.text();
+            return response.json();
+          })
+          .then((data) => {
+            const textParts = data.text.split("\n");
+
+            // Access specific parts of the text by index
+            const CodiceFiscale = textParts[6];
+            const CodicePOD = textParts[13];
+            const periodo = textParts[27];
+
+            // Set the textarea value to a specific part of the text
+            textarea.value = `Codice Fiscale: ${CodiceFiscale}\nCodice POD: ${CodicePOD}\nPeriodo: ${periodo}`;
+            // textarea.value = data.text;
+            // textarea.value = textParts[0];
+          })
+          // .then((extractedText) => {
+          //   textarea.value = extractedText.text;
+          //   // textarea.value = extractedText;
+          // });
+          .catch((error) => {
+            console.error("Fetch error:", error);
+          });
+      });
+    </script>
+  </body>
+</html>
